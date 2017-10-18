@@ -1,13 +1,13 @@
-const FundHandler = require('../fund');
+const RequestHandler = require('../request');
 
-describe('FundHandler', () => {
+describe('RequestHandler', () => {
     
     let sut;
 
     beforeAll(() => {
-        //TODO: Provide a mocked version of the ethereumMgr
-        let ethereumMgr=null
-        sut = new FundHandler(ethereumMgr);
+        //TODO: Provide a mocked version of the attestationMgr
+        let attestationMgr=null
+        sut = new RequestHandler(attestationMgr);
     });
 
     test('empty constructor', () => {

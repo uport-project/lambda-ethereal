@@ -2,7 +2,7 @@ import { Credentials, SimpleSigner } from 'uport'
 
 class AttestationMgr {
     
-    constructor(privateKey,appName,appMnid) {
+    constructor(privateKey,appName,appMnid,callbackUrl) {
         this.privateKey=privateKey;
         this.appMnid=appMnid;
 
@@ -12,6 +12,18 @@ class AttestationMgr {
           address: this.appMnid,
           signer: signer
         })
+
+        this.callbackUrl=callbackUrl;
+        console.log(appName);
+    }
+
+    //Create Request
+    requestToken(){
+        let requestOpts={
+            notifications: true,
+            callbackUrl: this.callbackUrl
+        }
+        return this.credentials.createRequest(requestOpts);
     }
 
     //Create attestation for the sub

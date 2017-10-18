@@ -1,21 +1,20 @@
 'use strict'
 
-const QrDataHandler = require('./api-v1/qrdata');
+const RequestHandler = require('./api-v1/request');
 const CallbackHandler = require('./api-v1/callback');
 
 const AttestationMgr = require('./lib/attestationMgr');
 
-let attestationMgr = new AttestationMgr(process.env.SIGNER_KEY,process.env.APP_NAME,process.env.APP_MNID);
+let attestationMgr = new AttestationMgr(process.env.SIGNER_KEY,process.env.APP_NAME,process.env.APP_MNID,process.env.CALLBACK_URL);
 
-let qrDataHandler = new QrDataHandler(attestationMgr);
+let requestHandler = new RequestHandler(attestationMgr);
 let callbackHandler = new CallbackHandler(attestationMgr);
 
-module.exports.qrdata = (event, context, callback) => {
+module.exports.request = (event, context, callback) => {
   console.log(event)
   //console.log(event.body)
-  let body;
-  try{ body = JSON.parse(event.body) } catch(e){console.log(e);body={}}
-  qrDataHandler.handle(body,(err,resp)=>{
+  let body={}; //GET call
+  requestHandler.handle(body,(err,resp)=>{
     let response;
     if(err==null){
       response = {
