@@ -1,0 +1,34 @@
+service: lambda-ethereal
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: develop
+  region: us-west-2
+
+  environment:
+    ETH_URLS: ''
+
+# Use the serverless-webpack plugin to transpile ES6
+plugins:
+  - serverless-webpack
+
+# Enable auto-packing of external modules
+custom:
+  webpackIncludeModules: true
+
+functions:
+  qrdata:
+    handler: src/api-v1_handler.qrdata
+    description: Make a disclose request 
+    events:
+     - http:
+         path: v1/qrdata
+         method: get
+  callback:
+    handler: src/api-v1_handler.callback
+    description: Handle disclosed data 
+    events:
+     - http:
+         path: v1/callback
+         method: post
