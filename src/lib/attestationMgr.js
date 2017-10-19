@@ -36,7 +36,20 @@ class AttestationMgr {
     attest(sub){
         let att={
             sub: sub,
-            claim: {ethereal:'OK'}
+            claim: {
+                attendance: {
+                    event: "Ethereal",
+                    date: Math.floor( Date.now() / 1000 ),
+                    location: {
+                        "@type": "Place",
+                        "address": {
+                          "@type": "PostalAddress",
+                          "addressLocality": "San Francisco",
+                          "addressRegion": "CA"
+                        }
+                    }
+                }
+            }
         }   
         return this.credentials.attest(att);
     }
