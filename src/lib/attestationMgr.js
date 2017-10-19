@@ -20,7 +20,8 @@ class AttestationMgr {
     requestToken(){
         let requestOpts={
             notifications: true,
-            callbackUrl: this.callbackUrl
+            callbackUrl: this.callbackUrl,
+            exp: 1509260400 //till Sunday, 29 de October de 2017 7:00:00 GMT / 0:00:00 PST (end of ethereal conf)
         }
         return this.credentials.createRequest(requestOpts);
     }
