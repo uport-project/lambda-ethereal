@@ -52,7 +52,7 @@ module.exports.callback = (event, context, callback) => {
   //console.log(event.body)
   let body;
   try{ body = JSON.parse(event.body) } catch(e){console.log(e);body={}}
-  CallbackHandler.handle(body,(err,resp)=>{
+  callbackHandler.handle(body,(err,resp)=>{
     let response;
     if(err==null){
       response = {

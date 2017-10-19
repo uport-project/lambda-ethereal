@@ -1,3 +1,4 @@
+import { decodeToken } from 'jsontokens'
 import { Credentials, SimpleSigner } from 'uport'
 
 class AttestationMgr {
@@ -26,13 +27,25 @@ class AttestationMgr {
         return this.credentials.createRequest(requestOpts);
     }
 
+    //Extract iss from JWT
+    issFromJWT(pnt){
+        return new Promise( (resolve,reject) => {
+            try{
+                let dToken=decodeToken(pnt);
+                resolve(dToken.payload.iss);
+            }catch(err){
+                reject(err)
+            }
+        }); 
+    }
+
     //Create attestation for the sub
     attest(sub){
         let expires=( Math.floor( Date.now() / 1000 ) + 30*24*60*60); //In 30 days (epoch in seconds)
         let att={
             sub: sub,
             exp: expires,
-            claim: {etherReal:'OK'}
+            claim: {ethereal:'OK'}
         }   
         return this.credentials.attest(att);
     }
