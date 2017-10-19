@@ -14,7 +14,6 @@ class AttestationMgr {
         })
 
         this.callbackUrl=callbackUrl;
-        console.log(appName);
     }
 
     //Create Request

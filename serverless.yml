@@ -7,9 +7,9 @@ provider:
   region: us-west-2
 
   environment:
-    SIGNER_KEY: 746c06333df9d76c533783bb04aea008cb44e48cda1733dafa9eb65302a2e011
-    APP_NAME: 'ConsenSys Verification Services (test:ajunge)'
-    APP_MNID: '2owhy1rcRzt2DiYd95ov5aKkzyzcJCCJGMG'
+    SIGNER_KEY: c15d1f5d211bdb5d12634bc08615cc337ac1f219f84642be5ca6336da6e15cb2
+    APP_NAME: "Andres Junge's Test App"
+    APP_MNID: '2orFtu2eF8dGXEKVnbHLdBsmwvbpyzoTeLs'
 
 # Use the serverless-webpack plugin to transpile ES6
 plugins:
