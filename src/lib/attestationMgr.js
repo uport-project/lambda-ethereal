@@ -27,24 +27,15 @@ class AttestationMgr {
         return this.credentials.createRequest(requestOpts);
     }
 
-    //Extract iss from JWT
-    issFromJWT(pnt){
-        return new Promise( (resolve,reject) => {
-            try{
-                let dToken=decodeToken(pnt);
-                resolve(dToken.payload.iss);
-            }catch(err){
-                reject(err)
-            }
-        }); 
+    //Extract iss from PNT
+    receiveAccessToken(at){
+        return this.credentials.receive(at); 
     }
 
     //Create attestation for the sub
     attest(sub){
-        let expires=( Math.floor( Date.now() / 1000 ) + 30*24*60*60); //In 30 days (epoch in seconds)
         let att={
             sub: sub,
-            exp: expires,
             claim: {ethereal:'OK'}
         }   
         return this.credentials.attest(att);

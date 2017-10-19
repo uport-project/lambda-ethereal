@@ -16,19 +16,22 @@ class CallbackHandler {
         cb({code: 403, message: 'no access_token'})
         return
       }
-
-      let notification_token=body.access_token;
-
-      //Issue attestation (sub: mnid of pnt issuer)
-      console.log("getting iss from notification_token")
-      let iss=await this.attestationMgr.issFromJWT(notification_token)
-      console.log("Creating attestation for iss:" +iss)
-      let attestation = await this.attestationMgr.attest(iss);
+      console.log("access_token:"+body.access_token);
+      
+      let profile=await this.attestationMgr.receiveAccessToken(body.access_token);
+      console.log("<profile>");
+      console.log(profile);
+      console.log("</profile>");
+      
+      let sub=profile.address
+      //Issue attestation 
+      console.log("Creating attestation for sub:" +sub)
+      let attestation = await this.attestationMgr.attest(sub);
       console.log("Attestation:"+attestation);
 
       //Push attetation to pututu
       console.log("Pushing to pututu")
-      await this.attestationMgr.push(notification_token,attestation);
+      await this.attestationMgr.push(profile.pushToken,attestation);
       console.log("DONE")
 
       
