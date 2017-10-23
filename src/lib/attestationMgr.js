@@ -49,7 +49,7 @@ class AttestationMgr {
 
     //Push notification to the user
     push(pushToken,attestation){
-        let url='me.uport:add?attestation='+attestation
+        let url='me.uport:add?attestations='+attestation
         return this.credentials.push(pushToken,{url})
     }
 }    
