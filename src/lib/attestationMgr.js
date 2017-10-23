@@ -37,17 +37,10 @@ class AttestationMgr {
         let att={
             sub: sub,
             claim: {
-                attendance: {
-                    event: "Ethereal",
-                    date: Math.floor( Date.now() / 1000 ),
-                    location: {
-                        "@type": "Place",
-                        "address": {
-                          "@type": "PostalAddress",
-                          "addressLocality": "San Francisco",
-                          "addressRegion": "CA"
-                        }
-                    }
+                "I Attended Ethereal": {
+                    event: "Ethereal Summit",
+                    date: "October 27, 2017",
+                    location: "San Fransisco, CA"
                 }
             }
         }   
