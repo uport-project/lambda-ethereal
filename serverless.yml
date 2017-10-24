@@ -10,6 +10,7 @@ provider:
     SIGNER_KEY: c15d1f5d211bdb5d12634bc08615cc337ac1f219f84642be5ca6336da6e15cb2
     APP_NAME: "Andres Junge's Test App"
     APP_MNID: '2orFtu2eF8dGXEKVnbHLdBsmwvbpyzoTeLs'
+    ANALYTICS_WRITE_KEY: 'Dpu6F9FzH7GtefERJMJmKtkcCfDtKJGm'
 
 # Use the serverless-webpack plugin to transpile ES6
 plugins:

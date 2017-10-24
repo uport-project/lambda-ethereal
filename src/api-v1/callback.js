@@ -1,7 +1,9 @@
+import { Analytics } from 'analytics-node'
 
 class CallbackHandler {
-    constructor (attestationMgr) {
+    constructor (attestationMgr,analytics) {
       this.attestationMgr = attestationMgr
+      this.analytics = analytics 
     }
   
     async handle(body, cb) {
@@ -32,9 +34,17 @@ class CallbackHandler {
       //Push attetation to pututu
       console.log("Pushing to pututu")
       await this.attestationMgr.push(profile.pushToken,attestation);
-      console.log("DONE")
+      console.log("Pushed")
 
+      //Segment.io Analytics
+      console.log("Tracking event to segment.io")
+      this.analytics.track({
+        userId: sub,
+        event: 'Ethereal Attestation Created'
+      });
+      console.log("Done")
       
+      console.log("Full DONE.");
       cb(null,attestation)
     }
   
