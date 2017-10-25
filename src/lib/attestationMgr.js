@@ -2,7 +2,7 @@ import { decodeToken } from 'jsontokens'
 import { Credentials, SimpleSigner } from 'uport'
 
 class AttestationMgr {
-    
+
     constructor(privateKey,appName,appMnid,callbackUrl) {
         this.privateKey=privateKey;
         this.appMnid=appMnid;
@@ -29,7 +29,7 @@ class AttestationMgr {
 
     //Extract iss from PNT
     receiveAccessToken(at){
-        return this.credentials.receive(at); 
+        return this.credentials.receive(at);
     }
 
     //Create attestation for the sub
@@ -43,15 +43,15 @@ class AttestationMgr {
                     location: "San Fransisco, CA"
                 }
             }
-        }   
+        }
         return this.credentials.attest(att);
     }
 
     //Push notification to the user
-    push(pushToken,attestation){
+    push(pushToken, pubEncKey, attestation){
         let url='me.uport:add?attestations='+attestation
-        return this.credentials.push(pushToken,{url})
+        return this.credentials.push(pushToken, pubEncKey, {url})
     }
-}    
+}
 
 module.exports = AttestationMgr;

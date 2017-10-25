@@ -3,9 +3,9 @@ import { Analytics } from 'analytics-node'
 class CallbackHandler {
     constructor (attestationMgr,analytics) {
       this.attestationMgr = attestationMgr
-      this.analytics = analytics 
+      this.analytics = analytics
     }
-  
+
     async handle(body, cb) {
       // Check empty body
       if (!body) {
@@ -19,21 +19,21 @@ class CallbackHandler {
         return
       }
       console.log("access_token:"+body.access_token);
-      
+
       let profile=await this.attestationMgr.receiveAccessToken(body.access_token);
       console.log("<profile>");
       console.log(profile);
       console.log("</profile>");
-      
+
       let sub=profile.address
-      //Issue attestation 
+      //Issue attestation
       console.log("Creating attestation for sub:" +sub)
       let attestation = await this.attestationMgr.attest(sub);
       console.log("Attestation:"+attestation);
 
       //Push attetation to pututu
       console.log("Pushing to pututu")
-      await this.attestationMgr.push(profile.pushToken,attestation);
+      await this.attestationMgr.push(profile.pushToken, profile.publicEncKey, attestation);
       console.log("Pushed")
 
       //Segment.io Analytics
@@ -43,12 +43,12 @@ class CallbackHandler {
         event: 'Ethereal Attestation Created'
       });
       console.log("Done")
-      
+
       console.log("Full DONE.");
       cb(null,attestation)
     }
-  
+
   }
-  
+
   module.exports = CallbackHandler
-  
+
