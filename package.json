@@ -24,7 +24,7 @@
   "dependencies": {
     "analytics-node": "^3.1.1",
     "serverless-webpack": "^3.1.0",
-    "uport": "next",
+    "uport": "^0.6.0-alpha-6",
     "webpack": "^3.6.0",
     "webpack-node-externals": "^1.6.0"
   }
