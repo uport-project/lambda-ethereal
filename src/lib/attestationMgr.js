@@ -22,7 +22,7 @@ class AttestationMgr {
         let requestOpts={
             notifications: true,
             callbackUrl: this.callbackUrl,
-            exp: 1509260400 //till Sunday, 29 de October de 2017 7:00:00 GMT / 0:00:00 PST (end of ethereal conf)
+            exp: 1509850800 //till Sunday, 5 de November de 2017 3:00:00 
         }
         return this.credentials.createRequest(requestOpts);
     }
@@ -37,10 +37,10 @@ class AttestationMgr {
         let att={
             sub: sub,
             claim: {
-                "I Attended Ethereal": {
-                    event: "Ethereal Summit",
-                    date: "October 27, 2017",
-                    location: "San Fransisco, CA"
+                "I Attended DEVCON3": {
+                    event: "DEVCON3",
+                    date: "November 1-4, 2017",
+                    location: "Cancún, México"
                 }
             }
         }
