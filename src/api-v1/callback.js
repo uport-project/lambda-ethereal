@@ -37,13 +37,20 @@ class CallbackHandler {
       console.log("Pushed")
 
       //Segment.io Analytics
-
-      this.analytics.identify(sub, { conference: 'Devcon3' });
-      this.analytics.group('Devcon3', { userId: sub });
-      this.analytics.track('Devcon3 Attendance Recorded', { userId: sub });
-
       console.log("Tracking event to segment.io")
-
+      this.analytics.group({
+        userId: sub,
+        groupId: 'devcon3',
+        traits: {
+          event: "Devcon3",
+          date: "November 1-4, 2017",
+          location: "Cancún, México"
+        }
+      });
+      this.analytics.track({
+        userId: sub,
+        event: 'Devcon3 Attendance Recorded'
+      })
       console.log("Done")
 
       console.log("Full DONE.");
