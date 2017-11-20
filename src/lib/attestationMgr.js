@@ -22,7 +22,7 @@ class AttestationMgr {
         let requestOpts={
             notifications: true,
             callbackUrl: this.callbackUrl,
-            exp: 1509850800 //till Sunday, 5 de November de 2017 3:00:00 
+            //(no expiration) exp: 1509850800 //till Sunday, 5 de November de 2017 3:00:00 
         }
         return this.credentials.createRequest(requestOpts);
     }
