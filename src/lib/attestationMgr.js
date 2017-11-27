@@ -22,7 +22,7 @@ class AttestationMgr {
         let requestOpts={
             notifications: true,
             callbackUrl: this.callbackUrl,
-            //(no expiration) exp: 1509850800 //till Sunday, 5 de November de 2017 3:00:00 
+            exp: 1512529200 //till Wednesday, 6 de December de 2017 3:00:00
         }
         return this.credentials.createRequest(requestOpts);
     }
@@ -37,10 +37,10 @@ class AttestationMgr {
         let att={
             sub: sub,
             claim: {
-                "I Attended DEVCON3": {
-                    event: "DEVCON3",
-                    date: "November 1-4, 2017",
-                    location: "Cancún, México"
+                "I Attended laBitConf": {
+                    event: "laBitConf",
+                    date: "December 4-5, 2017",
+                    location: "Bogotá, Colombia"
                 }
             }
         }
