@@ -5,6 +5,7 @@ provider:
   runtime: nodejs6.10
   stage: develop
   region: us-west-2
+  timeout: 30
 
   environment:
     SIGNER_KEY: c15d1f5d211bdb5d12634bc08615cc337ac1f219f84642be5ca6336da6e15cb2
@@ -23,7 +24,7 @@ custom:
 functions:
   request:
     handler: src/api-v1_handler.request
-    description: Make a disclose request 
+    description: Make a disclose request
     events:
      - http:
          path: v1/request
@@ -32,7 +33,7 @@ functions:
       CALLBACK_URL: 'https://api.uport.space/ethereal/v1/callback/'
   callback:
     handler: src/api-v1_handler.callback
-    description: Handle disclosed data 
+    description: Handle disclosed data
     events:
      - http:
          path: v1/callback
