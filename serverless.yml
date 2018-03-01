@@ -1,4 +1,4 @@
-service: lambda-ethereal
+service: lambda-fatima
 
 provider:
   name: aws
@@ -30,7 +30,7 @@ functions:
          path: v1/request
          method: get
     environment:
-      CALLBACK_URL: 'https://api.uport.space/ethereal/v1/callback/'
+      CALLBACK_URL: 'https://api.uport.space/fatima/v1/callback/'
   callback:
     handler: src/api-v1_handler.callback
     description: Handle disclosed data
