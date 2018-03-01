@@ -1,21 +1,23 @@
 {
-  "name": "lambda-ethereal",
+  "name": "lambda-fatima",
   "version": "0.0.1",
-  "description": "uPort demo for Ethereal Conference",
+  "description": "uPort attestor for Conference",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --runInBand"
+    "test": "jest --verbose --runInBand",
+    "coverage": "jest --coverage",
+    "tdd": "jest --watchAll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uport-project/lambda-ethereal.git"
+    "url": "git+https://github.com/uport-project/lambda-fatima.git"
   },
   "author": "Andres Junge <andres.junge@consensys.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/uport-project/lambda-ethereal/issues"
+    "url": "https://github.com/uport-project/lambda-fatima/issues"
   },
-  "homepage": "https://github.com/uport-project/lambda-ethereal#readme",
+  "homepage": "https://github.com/uport-project/lambda-fatima#readme",
   "devDependencies": {
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -27,5 +29,9 @@
     "uport": "^0.6.0",
     "webpack": "^3.6.0",
     "webpack-node-externals": "^1.6.0"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
