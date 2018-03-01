@@ -1,12 +1,19 @@
-import { Analytics } from 'analytics-node'
-
 class CallbackHandler {
-    constructor (attestationMgr,analytics) {
+    constructor (attestationMgr) {
       this.attestationMgr = attestationMgr
-      this.analytics = analytics
     }
 
-    async handle(body, cb) {
+    async handle(event,context, cb) {
+
+      //Parse body
+      let body;
+      try{ 
+          body = JSON.parse(event.body) 
+      } catch(e){
+          cb({code:403, message:'no json body: '+e.toString()})
+          return;
+      }
+
       // Check empty body
       if (!body) {
         cb({code: 403, message: 'no body'})
@@ -35,23 +42,6 @@ class CallbackHandler {
       console.log("Pushing to pututu")
       await this.attestationMgr.push(profile.pushToken, profile.publicEncKey, attestation);
       console.log("Pushed")
-
-      //Segment.io Analytics
-      console.log("Tracking event to segment.io")
-      this.analytics.group({
-        userId: sub,
-        groupId: 'devcon3',
-        traits: {
-          event: "Devcon3",
-          date: "November 1-4, 2017",
-          location: "Cancún, México"
-        }
-      });
-      this.analytics.track({
-        userId: sub,
-        event: 'Devcon3 Attendance Recorded'
-      })
-      console.log("Done")
 
       console.log("Full DONE.");
       cb(null,attestation)

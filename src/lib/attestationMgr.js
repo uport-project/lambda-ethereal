@@ -3,19 +3,24 @@ import { Credentials, SimpleSigner } from 'uport'
 
 class AttestationMgr {
 
-    constructor(privateKey,appName,appMnid,callbackUrl) {
-        this.privateKey=privateKey;
-        this.appMnid=appMnid;
-
-        const signer = SimpleSigner(this.privateKey)
-        this.credentials = new Credentials({
-          appName: appName,
-          address: this.appMnid,
-          signer: signer
-        })
-
-        this.callbackUrl=callbackUrl;
+    constructor() {
+        this.credentials=null;
+        this.callbackUrl=null;
     }
+
+    isSecretsSet(){
+        return (this.credentials !== null || this.callbackUrl !== null);
+    }
+
+    setSecrets(secrets){
+        this.credentials = new Credentials({
+          appName: secrets.APP_NAME,
+          address: secrets.APP_MNID,
+          signer:  SimpleSigner(secrets.SIGNER_KEY)
+        })
+        this.callbackUrl = secrets.CALLBACK_URL
+    }
+
 
     //Create Request
     requestToken(){
