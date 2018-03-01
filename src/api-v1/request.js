@@ -4,7 +4,7 @@ class RequestHandler {
       this.attestationMgr = attestationMgr
     }
   
-    async handle(body, cb) {
+    async handle(event,context, cb) {
       let requestToken= await this.attestationMgr.requestToken();
       let request='me.uport:me?requestToken='+requestToken
       cb(null,request)
