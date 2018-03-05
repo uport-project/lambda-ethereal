@@ -30,7 +30,7 @@ class AttestationMgr {
     requestToken(eventName){
         let requestOpts={
             notifications: true,
-            callbackUrl: "https://requestb.in/16sac2g1", //this.callbackUrl+'/'+eventName,
+            callbackUrl: this.callbackUrl+'/'+eventName,
             exp: events[eventName].expire
         }
         return this.credentials[eventName].createRequest(requestOpts);
