@@ -5,42 +5,79 @@ class CallbackHandler {
 
     async handle(event,context, cb) {
 
-      //Parse body
+      let eventName;
+      if (event.pathParameters && event.pathParameters.eventName){
+        eventName = event.pathParameters.eventName;
+      }else{
+        cb({code: 400, message: 'no pathParameter eventName'})
+        return;
+      }
+
       let body;
-      try{ 
-          body = JSON.parse(event.body) 
-      } catch(e){
-          cb({code:403, message:'no json body: '+e.toString()})
+  
+      if (event && !event.body){
+        body = event
+      } else if (event && event.body) {
+        try {
+          body = JSON.parse(event.body)
+        } catch (e) {
+          cb({ code: 400, message: 'no json body'})
           return;
+        }
+      } else {
+        cb({code: 400, message: 'no json body'})
+        return;
       }
-
-      // Check empty body
-      if (!body) {
-        cb({code: 403, message: 'no body'})
-        return
-      }
-
-      // Check empty access_token
+  
       if (!body.access_token) {
-        cb({code: 403, message: 'no access_token'})
-        return
+        cb ({code: 400, message: 'access_token parameter missing'})
+        return;
       }
+
       console.log("access_token:"+body.access_token);
 
-      let profile=await this.attestationMgr.receiveAccessToken(body.access_token);
-      console.log("<profile>");
-      console.log(profile);
-      console.log("</profile>");
+      //Receive access token.
+      let profile;
+      try{
+        console.log("calling attestationMgr.receiveAccessToken")
+        profile=await this.attestationMgr.receiveAccessToken(eventName,body.access_token);
+        console.log("<profile>");
+        console.log(profile);
+        console.log("</profile>")
+      } catch(err) {
+        console.log("Error on this.attestationMgr.receiveAccessToken")
+        console.log(err)
+        cb({ code: 500, message: err.message })
+        return;
+      }
 
       let sub=profile.address
+
       //Issue attestation
       console.log("Creating attestation for sub:" +sub)
-      let attestation = await this.attestationMgr.attest(sub);
+      let attestation;
+      try{
+        console.log("calling attestationMgr.attest")
+        attestation = await this.attestationMgr.attest(eventName,sub);
+      } catch(err) {
+        console.log("Error on this.attestationMgr.attest")
+        console.log(err)
+        cb({ code: 500, message: err.message })
+        return;
+      }
       console.log("Attestation:"+attestation);
 
       //Push attetation to pututu
       console.log("Pushing to pututu")
-      await this.attestationMgr.push(profile.pushToken, profile.publicEncKey, attestation);
+      try{
+        console.log("calling attestationMgr.push")
+        await this.attestationMgr.push(eventName,profile.pushToken, profile.publicEncKey, attestation);
+      } catch(err) {
+        console.log("Error on this.attestationMgr.push")
+        console.log(err)
+        cb({ code: 500, message: err })
+        return;
+      }
       console.log("Pushed")
 
       console.log("Full DONE.");

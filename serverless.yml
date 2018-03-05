@@ -39,5 +39,5 @@ functions:
     description: Handle disclosed data
     events:
      - http:
-         path: v1/callback
+         path: v1/callback/{eventName}
          method: post
