@@ -40,7 +40,7 @@ class CallbackHandler {
       let profile;
       try{
         console.log("calling attestationMgr.receiveAccessToken")
-        let profile=await this.attestationMgr.receiveAccessToken(eventName,body.access_token);
+        profile=await this.attestationMgr.receiveAccessToken(eventName,body.access_token);
         console.log("<profile>");
         console.log(profile);
         console.log("</profile>")
@@ -58,7 +58,7 @@ class CallbackHandler {
       let attestation;
       try{
         console.log("calling attestationMgr.attest")
-        let attestation = await this.attestationMgr.attest(eventName,sub);
+        attestation = await this.attestationMgr.attest(eventName,sub);
       } catch(err) {
         console.log("Error on this.attestationMgr.attest")
         console.log(err)
