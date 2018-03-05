@@ -16,16 +16,11 @@ class AttestationMgr {
 
     setSecrets(secrets){
         for (const eventName in events) {
-            console.log(secrets['SIGNER_KEY_'+eventName.toUpperCase()])
-            console.log(events[eventName].signer_name)
-            console.log(events[eventName].signer_mnid)
             this.credentials[eventName] = new Credentials({
                 appName: events[eventName].signer_name,
                 address: events[eventName].signer_mnid,
                 signer:  new SimpleSigner(secrets['SIGNER_KEY_'+eventName.toUpperCase()])
             })
-            console.log(this.credentials[eventName])
-
         }
         this.callbackUrl = secrets.CALLBACK_URL
     }
@@ -42,29 +37,23 @@ class AttestationMgr {
     }
 
     //Extract iss from PNT
-    receiveAccessToken(at){
-        return this.credentials.receive(at);
+    receiveAccessToken(eventName,at){
+        return this.credentials[eventName].receive(at);
     }
 
     //Create attestation for the sub
-    attest(sub){
+    attest(eventName,sub){
         let att={
             sub: sub,
-            claim: {
-                "Attended | uPort Community Call": {
-                    event: "uPort Community Call",
-                    date: "February 27, 2018",
-                    location: "uPort Town Hall"
-                }
-            }
+            claim: events[eventName].claim
         }
-        return this.credentials.attest(att);
+        return this.credentials[eventName].attest(att);
     }
 
     //Push notification to the user
-    push(pushToken, pubEncKey, attestation){
+    push(eventName,pushToken, pubEncKey, attestation){
         let url='me.uport:add?attestations='+attestation
-        return this.credentials.push(pushToken, pubEncKey, {url})
+        return this.credentials[eventName].push(pushToken, pubEncKey, {url})
     }
 }
 
