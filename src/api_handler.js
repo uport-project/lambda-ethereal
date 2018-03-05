@@ -1,8 +1,8 @@
 'use strict'
 const AWS = require('aws-sdk');
 
-const RequestHandler = require('./api-v1/request');
-const CallbackHandler = require('./api-v1/callback');
+const RequestHandler = require('./handlers/request');
+const CallbackHandler = require('./handlers/callback');
 
 const AttestationMgr = require('./lib/attestationMgr');
 
