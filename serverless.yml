@@ -28,14 +28,14 @@ custom:
 
 functions:
   request:
-    handler: src/api-v1_handler.request
+    handler: src/api_handler.request
     description: Make a disclose request
     events:
      - http:
          path: v1/request
-         method: get
+         method: post
   callback:
-    handler: src/api-v1_handler.callback
+    handler: src/api_handler.callback
     description: Handle disclosed data
     events:
      - http:
