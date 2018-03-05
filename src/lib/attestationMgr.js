@@ -1,61 +1,59 @@
 import { decodeToken } from 'jsontokens'
 import { Credentials, SimpleSigner } from 'uport'
+import events from './events'
+
 
 class AttestationMgr {
 
     constructor() {
-        this.credentials=null;
+        this.credentials={};
         this.callbackUrl=null;
     }
 
     isSecretsSet(){
-        return (this.credentials !== null || this.callbackUrl !== null);
+        return ( this.callbackUrl !== null);
     }
 
     setSecrets(secrets){
-        this.credentials = new Credentials({
-          appName: secrets.APP_NAME,
-          address: secrets.APP_MNID,
-          signer:  SimpleSigner(secrets.SIGNER_KEY)
-        })
+        for (const eventName in events) {
+            this.credentials[eventName] = new Credentials({
+                appName: events[eventName].signer_name,
+                address: events[eventName].signer_mnid,
+                signer:  new SimpleSigner(secrets['SIGNER_KEY_'+eventName.toUpperCase()])
+            })
+        }
         this.callbackUrl = secrets.CALLBACK_URL
     }
 
 
     //Create Request
-    requestToken(){
+    requestToken(eventName){
         let requestOpts={
             notifications: true,
-            callbackUrl: this.callbackUrl,
-            exp: 1519763400 //till Tuesday, 27 de February de 2018 20:30:00 GMT
+            callbackUrl: this.callbackUrl+'/'+eventName,
+            exp: events[eventName].expire
         }
-        return this.credentials.createRequest(requestOpts);
+        return this.credentials[eventName].createRequest(requestOpts);
     }
 
     //Extract iss from PNT
-    receiveAccessToken(at){
-        return this.credentials.receive(at);
+    receiveAccessToken(eventName,at){
+        return this.credentials[eventName].receive(at);
     }
 
     //Create attestation for the sub
-    attest(sub){
+    attest(eventName,sub){
         let att={
             sub: sub,
-            claim: {
-                "Attended | uPort Community Call": {
-                    event: "uPort Community Call",
-                    date: "February 27, 2018",
-                    location: "uPort Town Hall"
-                }
-            }
+            claim: events[eventName].claim
         }
-        return this.credentials.attest(att);
+        return this.credentials[eventName].attest(att);
     }
 
     //Push notification to the user
-    push(pushToken, pubEncKey, attestation){
+    push(eventName,pushToken, pubEncKey, attestation){
         let url='me.uport:add?attestations='+attestation
-        return this.credentials.push(pushToken, pubEncKey, {url})
+        return this.credentials[eventName].push(pushToken, pubEncKey, {url})
     }
 }
 

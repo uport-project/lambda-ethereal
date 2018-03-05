@@ -32,12 +32,12 @@ functions:
     description: Make a disclose request
     events:
      - http:
-         path: v1/request
+         path: request
          method: post
   callback:
     handler: src/api_handler.callback
     description: Handle disclosed data
     events:
      - http:
-         path: v1/callback
+         path: callback/{eventName}
          method: post
