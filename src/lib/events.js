@@ -35,7 +35,7 @@ module.exports = {
         signer_name: "uPort Team",
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
     },
-    ethereumjoburg: {
+    blockchainafrica: {
         expire: 1520719200000, // Friday, 9th of March, 22:00:00 GMT 23:00:00 South Africa
         claim: {
             "Attended Blockchain Africa 2018": {
