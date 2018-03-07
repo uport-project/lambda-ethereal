@@ -1,6 +1,6 @@
 {
   "name": "lambda-fatima",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "uPort attestor for Conference",
   "main": "index.js",
   "scripts": {
