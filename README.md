@@ -1,2 +1,2 @@
-# lambda-ethereal
-uPort demo for Ethereal Conference
+# lambda-fatima
+uPort attestor for Conference
