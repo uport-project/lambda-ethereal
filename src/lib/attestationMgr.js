@@ -16,10 +16,11 @@ class AttestationMgr {
 
     setSecrets(secrets){
         for (const eventName in events) {
+            const mnid=events[eventName].signer_mnid
             this.credentials[eventName] = new Credentials({
                 appName: events[eventName].signer_name,
-                address: events[eventName].signer_mnid,
-                signer:  new SimpleSigner(secrets['SIGNER_KEY_'+eventName.toUpperCase()])
+                address: mnid,
+                signer:  new SimpleSigner(secrets['SIGNER_KEY_'+mnid])
             })
         }
         this.callbackUrl = secrets.CALLBACK_URL
