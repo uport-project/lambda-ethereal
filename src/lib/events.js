@@ -58,5 +58,17 @@ module.exports = {
         },
         signer_name: "uPort Team",
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+    },
+    ethcc2018: {
+        expire: 1520528400, // Thursday, 8 de March de 2018 17:00:00 GMT 18:00:00 France
+        claim: {
+            "Attended EthCC": {
+                event: "Ethereum Community Conference",
+                date: "March 8-10, 2018",
+                location: "Paris, France"
+            }
+        },
+        signer_name: "uPort Team",
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
     }
 }
