@@ -106,5 +106,17 @@ module.exports = {
         },
         signer_name: "uPort Team",
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
-    }
+    },
+    ethereumcolumbuspod0: {
+      expire: 1521691200, // Thursday, March 22, 2018 12:00:00 AM GMT-04:00
+      claim: {
+        "Attended Ethereum Columbus's first Proof of Drink!": {
+          event: "Proof of Drink",
+          date: "March 21, 2018",
+          location: "Zenos"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+  }
 }
