@@ -9,7 +9,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3' 
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     dcsummit: {
         expire: 1520571600, //Friday, 9 de March de 2018 5:00:00 GMT // 00:00 EST
@@ -21,7 +21,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethereumjoburg: {
         expire: 1520460000, // Wednesday, 7th of March, 22:00:00 GMT 23:00:00 South Africa
@@ -33,7 +33,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     blockchainafrica: {
         expire: 1520719200000, // Friday, 9th of March, 22:00:00 GMT 23:00:00 South Africa
@@ -45,7 +45,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethereumcapetown: {
         expire: 1520719200, // Saturday, 10th of March, 22:00:00 GMT 23:00:00 South Africa
@@ -57,7 +57,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethcc2018: {
         expire: 1520528400, // Thursday, 8 de March de 2018 17:00:00 GMT 18:00:00 France
@@ -69,6 +69,42 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+    },
+    ethereumnairobi: {
+        expire: 1521748800, // Thursday, 22nd of March, 20:00:00 GMT 23:00:00 Kenya
+        claim: {
+            "Attended Ethereum Meetup Nairobi": {
+                event: "Ethereum Meetup Nairobi",
+                date: "March 22, 2018",
+                location: "Metta Nairobi"
+            }
+        },
+        signer_name: "uPort Team",
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+    },
+    ethereumabuja: {
+        expire: 1521928800, // Saturday, 24th of March, 22:00:00 GMT 23:00:00 Nigeria
+        claim: {
+            "Attended Ethereum Meetup Abuja": {
+                event: "Ethereum Meetup Abuja",
+                date: "March 24, 2018",
+                location: "Civic Innovation Hub Abuja"
+            }
+        },
+        signer_name: "uPort Team",
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+    },
+    ethereumlagos: {
+        expire: 1522188000, // Tuesday, 27th of March, 22:00:00 GMT 23:00:00 Nigeria
+        claim: {
+            "Attended Ethereum Meetup Lagos": {
+                event: "Ethereum Meetup Lagos",
+                date: "March 27, 2018",
+                location: "Impact Hub Lagos"
+            }
+        },
+        signer_name: "uPort Team",
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     }
 }
