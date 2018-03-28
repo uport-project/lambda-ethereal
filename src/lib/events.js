@@ -9,7 +9,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethereumnairobi: {
         expire: 1521748800, // Thursday, 22nd of March, 20:00:00 GMT 23:00:00 Kenya
@@ -47,13 +47,13 @@ module.exports = {
         signer_name: "uPort Team",
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
-    ethereumcolumbuspod0: {
-      expire: 1521691200, // Thursday, March 22, 2018 12:00:00 AM GMT-04:00
-      claim: {
-        "Attended Ethereum Columbus's first Proof of Drink!": {
-          event: "Proof of Drink",
-          date: "March 21, 2018",
-          location: "Zenos"
+    ethereumcolumbus0: {
+      expire: 1522295999, // Wednesday, March 28, 2018 11:59:59 PM GMT-04:00
+    claim: {
+      "Attended Ethereum Columbus's meetup!": {
+        event: "Ethereum Columbus meetup 3/28",
+        date: "March 28, 2018",
+        location: "Chrome Edge Studios"
       }
     },
     signer_name: "uPort Team",
