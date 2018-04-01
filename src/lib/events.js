@@ -1,4 +1,28 @@
 module.exports = {
+    rsmclaim1: {
+      expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
+      claim: {
+          "Attended the RSM Conference": {
+              event: "How Blockchain and Cryptocurrency Work & How They Will Disrupt Client Business (71482)",
+               date: "May 1, 2018",
+           location: "United States"
+          }
+      },
+      signer_name: "uPort Team",
+      signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+  },
+    rsmclaim2: {
+      expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
+      claim: {
+          "Attended Discover Blockchain Technology Code-a-Thon 2018": {
+              event: "How Blockchain and Cryptocurrency Work & How They Will Disrupt Client Business (71482)",
+               date: "May 23, 2018",
+           location: "United States"
+          }
+      },
+      signer_name: "uPort Team",
+      signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
+  },
     dchack: {
         expire: 1520362800, //Tuesday, 6 de March de 2018 19:00:00 GMT // 19:00 EST
         claim: {
@@ -81,7 +105,7 @@ module.exports = {
             }
         },
         signer_name: "uPort Team",
-        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'  
+        signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethereumnairobi: {
         expire: 1521748800, // Thursday, 22nd of March, 20:00:00 GMT 23:00:00 Kenya
