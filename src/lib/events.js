@@ -72,11 +72,11 @@ module.exports = {
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     uportCommunityCall3: {
-        expire: 1522080300, // Monday, March 26, 2018 12:05:00 PM GMT-04:00
+        expire: 1522805314, // Tuesday, April 3, 2018 12:05:00 PM GMT-04:00
         claim: {
             "Attended uPort Community Call": {
                 event: "uPort Community Call #3",
-                date: "March 26, 2018",
+                date: "April 3, 2018",
                 location: "uPort Town Hall"
             }
         },
