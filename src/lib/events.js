@@ -14,7 +14,7 @@ module.exports = {
     rsmclaim2: {
       expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
       claim: {
-          "Attended Discover Blockchain Technology Code-a-Thon 2018": {
+          "Attended the RSM Conference": {
               event: "How Blockchain and Cryptocurrency Work & How They Will Disrupt Client Business (71482)",
                date: "May 23, 2018",
            location: "United States"
