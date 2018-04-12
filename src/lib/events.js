@@ -47,13 +47,13 @@ module.exports = {
         signer_name: "uPort Team",
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
-    ethereumcolumbus0: {
-      expire: 1522295999, // Wednesday, March 28, 2018 11:59:59 PM GMT-04:00
+    ethereumcolumbusPOD1: {
+      expire: 1523505599, // Wednesday, April 11, 2018 11:59:59 PM GMT-04:00
     claim: {
-      "Attended Ethereum Columbus's meetup!": {
-        event: "Ethereum Columbus meetup 3/28",
-        date: "March 28, 2018",
-        location: "Chrome Edge Studios"
+      "Attended Proof of Drink #2!": {
+        event: "Proof of Drink 4/11",
+        date: "April 11, 2018",
+        location: "Zeno's"
       }
     },
     signer_name: "uPort Team",
