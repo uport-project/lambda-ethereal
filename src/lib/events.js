@@ -48,7 +48,7 @@ module.exports = {
         signer_mnid: '2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3'
     },
     ethereumcolumbusPOD1: {
-      expire: 1523505599, // Wednesday, April 11, 2018 11:59:59 PM GMT-04:00
+      expire: 1523591999, // Thursday, April 12, 2018 11:59:59 PM GMT-04:00
     claim: {
       "Attended Proof of Drink #2!": {
         event: "Proof of Drink 4/11",
