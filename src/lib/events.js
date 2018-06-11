@@ -26,7 +26,7 @@ module.exports = {
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
   },
   ethereumcolumbusPOD1a: {
-    expire: 1526579898, // Thursday, May 17, 2018 1:58:18 PM GMT-04:00
+    expire: 1560364291, // Wednesday, June 12, 2019 2:31:31 PM GMT-04:00
     claim: {
       "Attended Proof of Drink #2!": {
         event: "Proof of Drink 4/11",
@@ -37,12 +37,12 @@ module.exports = {
     signer_name: "uPort Team",
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
   },
-  ethereumcolumbusPOD2: {
-    expire: 1526579898, // Thursday, May 17, 2018 1:58:18 PM GMT-04:00
+  ethereumcolumbusPOD3: {
+    expire: 1528828291, // Tuesday, June 12, 2018 2:31:31 PM GMT-04:00
     claim: {
-      "Attended Proof of Drink #3!": {
-        event: "Proof of Drink 5/16",
-        date: "May 16, 2018",
+      "Attended Proof of Drink #4!": {
+        event: "Proof of Drink 6/11",
+        date: "June 11, 2018",
         location: "Zeno's"
       }
     },
