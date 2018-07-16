@@ -40,7 +40,7 @@ module.exports = {
   ethereumcolumbusPOD4: {
     expire: 1531849898, // Tuesday, July 17, 2018 1:51:38 PM GMT-04:00
     claim: {
-      "Attended Proof of Drink #4!": {
+      "Attended Proof of Drink #5!": {
         event: "Proof of Drink 7/16",
         date: "July 16, 2018",
         location: "Byrne's"
