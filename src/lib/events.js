@@ -48,5 +48,29 @@ module.exports = {
     },
     signer_name: "uPort Team",
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
+  angelhacklagoshackathon: {
+    expire: 1532905199, // Friday, July 27-29, 2018 6 PM GMT+1
+    claim: {
+      "Attended AngelHack Lagos Hackathon": {
+        event: "AngelHack Lagos Hackathon",
+        date: "July 27-29, 2018",
+        location: "Impact Hub Lagos"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
+  angelhacklagosmeetup: {
+    expire: 1532732399, // Friday, July 27, 2018 6 PM GMT+1
+    claim: {
+      "Attended AngelHack Lagos Meetup": {
+        event: "AngelHack Lagos Meetup",
+        date: "July 27, 2018",
+        location: "Impact Hub Lagos"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
   }
 };
