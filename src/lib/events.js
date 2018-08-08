@@ -1,4 +1,30 @@
 module.exports = {
+  workshopClaim: {
+    expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
+    claim: {
+      "Attended the first ever blockchain workshop by a banking institution in Puerto Rico": {
+        event:
+          "Banco Popular, Evertec, & ConsenSys - POC Workshop",
+        date: "August 9, 2018",
+        location: "Puerto Rico, United States"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
+  sampleKYC: {
+    expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
+    claim: {
+      "KYC Due Diligence performed by Banco Popular": {
+        event:
+          "Customer has undergone the KYC due diligence processes of Banco Popular and has been onboarded as a customer.",
+        date: "May 1, 2018",
+        location: "Puerto Rico, United States"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
   rsmclaim1: {
     expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
     claim: {
