@@ -3,8 +3,7 @@ module.exports = {
     expire: 1546257600, //Monday, December 31, 2018 4:00:00 AM GMT-08:00
     claim: {
       "Attended the first ever blockchain workshop by a banking institution in Puerto Rico": {
-        event:
-          "Banco Popular, Evertec, & ConsenSys - POC Workshop",
+        event: "Banco Popular, Evertec, & ConsenSys - POC Workshop",
         date: "August 9, 2018",
         location: "Puerto Rico, United States"
       }
@@ -63,13 +62,37 @@ module.exports = {
     signer_name: "uPort Team",
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
   },
-  ethereumcolumbusPOD3: {
-    expire: 1528828291, // Tuesday, June 12, 2018 2:31:31 PM GMT-04:00
+  ethereumcolumbusPOD4: {
+    expire: 1531849898, // Tuesday, July 17, 2018 1:51:38 PM GMT-04:00
     claim: {
-      "Attended Proof of Drink #4!": {
-        event: "Proof of Drink 6/11",
-        date: "June 11, 2018",
-        location: "Zeno's"
+      "Attended Proof of Drink #5!": {
+        event: "Proof of Drink 7/16",
+        date: "July 16, 2018",
+        location: "Byrne's"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
+  angelhacklagoshackathon: {
+    expire: 1532905199, // Friday, July 27-29, 2018 6 PM GMT+1
+    claim: {
+      "Attended AngelHack Lagos Hackathon": {
+        event: "AngelHack Lagos Hackathon",
+        date: "July 27-29, 2018",
+        location: "Impact Hub Lagos"
+      }
+    },
+    signer_name: "uPort Team",
+    signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
+  },
+  angelhacklagosmeetup: {
+    expire: 1532732399, // Friday, July 27, 2018 6 PM GMT+1
+    claim: {
+      "Attended AngelHack Lagos Meetup": {
+        event: "AngelHack Lagos Meetup",
+        date: "July 27, 2018",
+        location: "Impact Hub Lagos"
       }
     },
     signer_name: "uPort Team",
