@@ -1,5 +1,5 @@
 module.exports = {
-  workshopClaim: {
+  communityCall201811: {
     expire: 1542734100, //Tue, 20 Nov 2018 17:15:00 +0000
     claim: {
       "Attended uPort Community Call Nov-2018": {
