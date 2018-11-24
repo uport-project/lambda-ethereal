@@ -10,12 +10,11 @@ module.exports = {
     signer_name: "uPort Team",
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
   },
-  testEvent: {
+  meshCredential: {
     expire: 32503680000, //Wed, 01 Jan 3000 00:00:00 +0000 
     claim: {
-      "testEvent": {
-        event: "uPort Test Event",
-        date: "3000-01-01"
+      "meshCredential": {
+        test: true
       }
     },
     signer_name: "uPort Team",
