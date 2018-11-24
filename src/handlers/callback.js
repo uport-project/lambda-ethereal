@@ -39,13 +39,13 @@ class CallbackHandler {
       //Receive access token.
       let profile;
       try{
-        console.log("calling attestationMgr.receiveAccessToken")
-        profile=await this.attestationMgr.receiveAccessToken(eventName,body.access_token);
+        console.log("calling attestationMgr.authenticate")
+        profile=await this.attestationMgr.authenticate(eventName,body.access_token);
         console.log("<profile>");
         console.log(profile);
         console.log("</profile>")
       } catch(err) {
-        console.log("Error on this.attestationMgr.receiveAccessToken")
+        console.log("Error on this.attestationMgr.authenticate")
         console.log(err)
         cb({ code: 500, message: err.message })
         return;
@@ -71,7 +71,7 @@ class CallbackHandler {
       console.log("Pushing to pututu")
       try{
         console.log("calling attestationMgr.push")
-        await this.attestationMgr.push(eventName,profile.pushToken, profile.publicEncKey, attestation);
+        await this.attestationMgr.push(eventName,profile.pushToken, profile.boxPub, attestation);
       } catch(err) {
         console.log("Error on this.attestationMgr.push")
         console.log(err)

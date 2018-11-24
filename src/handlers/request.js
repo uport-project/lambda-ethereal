@@ -27,8 +27,8 @@ class RequestHandler {
       }
 
       try{
-        console.log("calling attestationMgr.requestToken")
-        let requestToken= await this.attestationMgr.requestToken(body.eventName);
+        console.log("calling attestationMgr.request")
+        let requestToken= await this.attestationMgr.request(body.eventName);
         let request='me.uport:me?requestToken='+requestToken
         cb(null,request)
       } catch(err) {

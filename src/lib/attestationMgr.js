@@ -1,7 +1,6 @@
-import { decodeToken } from 'jsontokens'
-import { Credentials, SimpleSigner } from 'uport'
 import events from './events'
-
+import { Credentials } from 'uport-credentials'
+import { transport } from 'uport-transports'
 
 class AttestationMgr {
 
@@ -16,45 +15,46 @@ class AttestationMgr {
 
     setSecrets(secrets){
         for (const eventName in events) {
-            const mnid=events[eventName].signer_mnid
+            const did=events[eventName].signer_did
+            const didE = did.replace(/:/g,'_');
             this.credentials[eventName] = new Credentials({
                 appName: events[eventName].signer_name,
-                address: mnid,
-                signer:  new SimpleSigner(secrets['SIGNER_KEY_'+mnid])
+                did: did,
+                privateKey: secrets['SIGNER_KEY_'+didE]
             })
         }
         this.callbackUrl = secrets.CALLBACK_URL
     }
 
-
     //Create Request
-    requestToken(eventName){
+    async request(eventName){
         let requestOpts={
             notifications: true,
             callbackUrl: this.callbackUrl+'/'+eventName,
             exp: events[eventName].expire
         }
-        return this.credentials[eventName].createRequest(requestOpts);
+        return await this.credentials[eventName].createDisclosureRequest(requestOpts);
     }
 
     //Extract iss from PNT
-    receiveAccessToken(eventName,at){
-        return this.credentials[eventName].receive(at);
+    async authenticate(eventName,token){
+        return await this.credentials[eventName].authenticateDisclosureResponse(token);
     }
 
     //Create attestation for the sub
-    attest(eventName,sub){
+    async attest(eventName,sub){
         let att={
             sub: sub,
             claim: events[eventName].claim
         }
-        return this.credentials[eventName].attest(att);
+        return this.credentials[eventName].createVerification(att);
     }
 
     //Push notification to the user
-    push(eventName,pushToken, pubEncKey, attestation){
-        let url='me.uport:add?attestations='+attestation
-        return this.credentials[eventName].push(pushToken, pubEncKey, {url})
+    async push(eventName,pushToken, pubEncKey, attestation){
+        const url='me.uport:add?attestations='+attestation
+        const pushTransport = transport.push.send(pushToken, pubEncKey)
+        return await pushTransport(url)
     }
 }
 

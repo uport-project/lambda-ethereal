@@ -26,8 +26,8 @@
   "dependencies": {
     "serverless-kms-secrets": "^1.0.3",
     "serverless-webpack": "^3.1.0",
-    "uport": "^0.6.0",
     "uport-credentials": "^1.0.2",
+    "uport-transports": "^0.1.2",
     "webpack": "^3.12.0",
     "webpack-node-externals": "^1.6.0"
   },
