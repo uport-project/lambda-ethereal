@@ -13,9 +13,7 @@ module.exports = {
   meshCredential: {
     expire: 32503680000, //Wed, 01 Jan 3000 00:00:00 +0000 
     claim: {
-      "meshCredential": {
-        test: true
-      }
+      "memberOf":  "did:https:consensys.net"
     },
     signer_name: "uPort Team",
     signer_mnid: "2oiSESCx5Y7oMHDAxx9iUBkz88rdA9yvmW3"
